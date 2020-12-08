@@ -6,6 +6,7 @@ namespace App\AppModules\Usuarios\Auth\Controllers;
 
 use App\AppModules\Usuarios\Auth\Services\AuthService;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -16,8 +17,8 @@ class AuthController extends Controller
     }
 
     public function testeController(){
-        $a = $this->service->testeService();
-        return response()->json(['msg'=>$a]);
+        $this->service->testeService();
+        return response()->json(['msg'=>'teste']);
     }
 
 }
